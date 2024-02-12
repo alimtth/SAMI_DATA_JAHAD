@@ -1,4 +1,6 @@
+import { Head } from "next/document";
 import React from "react";
+import Header from "./Header";
 
 interface IMainLayoutProps {
     children: React.ReactNode;
@@ -9,15 +11,12 @@ const MainLayouts = (props: IMainLayoutProps) => {
 
     return(
         <>
-        <header className="bg-slate-400">
-            <div>header</div>
-        </header>
+        <Header />
         <main>
             {children}
         </main>
-        <footer className="bg-green-300">
-            <div>footer</div>
-        </footer>
+        
+        {/* <Footer /> */}
         </>
     )
 }
