@@ -32,6 +32,7 @@ export default async function usersServices(
     if (user) return res.status(400).json({message: 'user already exists'});
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(data.password, salt);
+    //hashing password alg 5 hash
     const newUser = await prisma.user.create({
       data: {
         email: data.email,
