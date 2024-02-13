@@ -2,7 +2,7 @@ import MainLayouts from "@/layouts/MainLayouts";
 import { Context } from "@/provider/MainContext";
 import { useContext } from "react";
 
-const homePage = () => {
+export default const homePage = () => {
   const {user} = useContext(Context)
   console.log(user);
   
@@ -16,3 +16,13 @@ const homePage = () => {
 };
 
 export default homePage;
+
+
+export default function getStaticProps() {
+  return {
+    props: {
+      title: 'salam',
+      body: "کامنت شماره فلان"
+    },
+  }
+}
